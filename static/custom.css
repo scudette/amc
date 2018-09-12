@@ -1,0 +1,41 @@
+.thumb_container {
+    height: 128px;
+    width: 200px;
+    display: inline;
+}
+
+.mp3_thumbnail {
+    height: 128px;
+    cursor: pointer;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+
+li span {
+    height: 100%;
+}
+
+                        /* these are totally optional */
+
+                        /* hides focus marker around control buttons */
+                        .mejs-controls .mejs-button button:focus {
+                                outline: none;
+                        }
+
+                        /* replace svg with our png - chrome 36 has issues with bg position and svg (play arrow invisible) */
+                        .mejs-overlay-button {
+                                background-image: url(build/bigplay.png);
+                        }
+
+                        /* makes loader bg transparent, not black, we also supply a different loading gif in _demo/ */
+                        .mejs-overlay-loading {
+                                background: none;
+                        }

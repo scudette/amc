@@ -1,0 +1,27 @@
+
+
+Options +Indexes
+
+
+# DIRECTORY CUSTOMIZATION
+<IfModule mod_autoindex.c>
+    # SET INDEX OPTIONS
+    IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* SuppressHTMLPreamble
+
+    # SPECIFY HEADER FILE
+    HeaderName /static/header.html
+
+    # SPECIFY FOOTER FILE
+    ReadmeName /static/footer.html
+
+</IfModule>
+
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+
+<RequireAny>
+    Require ip 192.168.
+    Require ip 127.0.
+    Require valid-user
+</RequireAny>
